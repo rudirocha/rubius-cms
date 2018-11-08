@@ -1,0 +1,85 @@
+{% extends 'security/base.html.twig' %}
+
+{% block title %}Log in!{% endblock %}
+{% block body %}
+<div class="row">
+    <div class="col-lg-6 offset-lg-3">
+        <div class="card card-stats">
+            <div class="card-header text-center">
+                <h3 class="card-title">
+                    {% trans from 'login' %} admin.login.pageTitle {% endtrans %}
+                </h3>
+            </div>
+            <div class="card-body">
+            
+            {% if error %}
+                <div class="alert alert-danger text-center" role="alert">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+            {% endif %}
+                <!-- Default form login -->
+                <form method="POST" class="text-center p-5">
+
+                    <!-- Email -->
+                    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control mb-4"
+                            placeholder="Email" required autofocus>
+                    <!-- Password -->
+                    <input type="password" name="password" id="inputPassword" class="form-control mb-4" placeholder="Password"
+                    required>
+
+                <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                
+                    <!-- Sign in button -->
+                    <button class="btn btn-primary btn-block my-4" type="submit">
+                        {% trans from 'login' %} admin.login.loginBtn {% endtrans %}
+                    </button>
+
+                
+
+                </form>
+                <!-- Default form login -->
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+{% block body1 %}
+<!-- login area start -->
+<div class="login-area">
+    <div class="container">
+        <div class="login-box ptb--100">
+            <form method="POST">
+                <div class="login-form-head">
+                    <h4>{% trans from 'login' %} admin.login.pageTitle {% endtrans %}</h4>
+                    <p>{% trans from 'login' %} admin.login.pageSubTitle {% endtrans %}</p>
+                </div>
+                {% if error %}
+                <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                {% endif %}
+                <div class="login-form-body">
+                    <div class="form-gp">
+                        <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control"
+                            placeholder="Email" required autofocus>
+                        <i class="ti-email"></i>
+                    </div>
+                    <div class="form-gp">
+                        <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password"
+                            required>
+
+                        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                        <i class="ti-lock"></i>
+                    </div>
+
+                    <div class="submit-btn-area">
+                        <button id="form_submit" type="submit">
+                            {% trans from 'login' %} admin.login.loginBtn {% endtrans %}
+                            <i class="fas fa-address-book"></i></i>
+                        </button>
+                    </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- login area end -->
+
+
+{% endblock %}

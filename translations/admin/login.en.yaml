@@ -1,0 +1,5 @@
+admin:
+  login:
+    pageTitle: Sign in into RubiusCMS
+    pageSubTitle: Please enter your details to sign in.
+    loginBtn: Submit

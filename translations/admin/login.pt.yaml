@@ -1,0 +1,5 @@
+admin:
+  login:
+    pageTitle: RubiusCMS
+    pageSubTitle: Insira os seus detalhes de inicio de sessão.
+    loginBtn: Entrar
