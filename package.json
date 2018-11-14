@@ -3,6 +3,9 @@
         "@symfony/webpack-encore": "^0.20.0",
         "node-sass": "^4.9.4",
         "sass-loader": "^7.1.0",
+        "vue": "^2.5.17",
+        "vue-loader": "^15.4.2",
+        "vue-template-compiler": "^2.5.17",
         "webpack-notifier": "^1.6.0"
     },
     "license": "UNLICENSED",
