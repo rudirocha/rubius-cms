@@ -1,0 +1,44 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block content %}
+    <h1>Content</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ content.id }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ content.title }}</td>
+            </tr>
+            <tr>
+                <th>Alias</th>
+                <td>{{ content.alias }}</td>
+            </tr>
+            <tr>
+                <th>Intro</th>
+                <td>{{ content.intro }}</td>
+            </tr>
+            <tr>
+                <th>Body</th>
+                <td>{{ content.body }}</td>
+            </tr>
+            <tr>
+                <th>Language</th>
+                <td>{{ content.language }}</td>
+            </tr>
+            <tr>
+                <th>Enabled</th>
+                <td>{{ content.enabled ? 'Yes' : 'No' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('admin.content_index') }}">back to list</a>
+
+    <a href="{{ path('admin.content_edit', {'id': content.id}) }}">edit</a>
+
+    {{ include('admin/content/_delete_form.html.twig') }}
+{% endblock %}

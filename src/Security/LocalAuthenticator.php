@@ -86,7 +86,7 @@ class LocalAuthenticator extends AbstractFormLoginAuthenticator
         }
 
         // For example : 
-        return new RedirectResponse($this->router->generate('admin'));
+        return new RedirectResponse($this->router->generate('admin.dashboard'));
         //throw new \Exception('TODO: provide a valid redirect inside '.__FILE__);
     }
 

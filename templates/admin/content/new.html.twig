@@ -1,0 +1,9 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block content %}
+    <h1>Create new Content</h1>
+
+    {{ include('admin/content/_form.html.twig') }}
+
+    <a href="{{ path('admin.content_index') }}">back to list</a>
+{% endblock %}
