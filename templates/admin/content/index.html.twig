@@ -1,51 +1,51 @@
 {% extends 'admin/base.html.twig' %}
 
 {% block content %}
- <div class="card">
-                <div class="card-header card-header-primary">
-                  <h4 class="card-title ">
-                  {% trans from 'sidebar' %} admin.sidebar.options.pages {% endtrans %}
-                  </h4>
-                </div>
-                <div class="card-body">
-                  <div class="table-responsive">
-                    <table class="table">
-                      <thead class=" text-primary">
-                        <th>Id</th>
-                <th>Title</th>
-                <th>Alias</th>
-                <th>Intro</th>
-                <th>Body</th>
-                <th>Language</th>
-                <th>Enabled</th>
-                <th>actions</th>
-                      </thead>
-                      <tbody>
-                        {% for content in contents %}
-            <tr>
-                <td>{{ content.id }}</td>
-                <td>{{ content.title }}</td>
-               Content <td>{{ content.alias }}</td>
-                <td>{{ content.intro }}</td>
-                <td>{{ content.body }}</td>
-                <td>{{ content.language }}</td>
-                <td>{{ content.enabled ? 'Yes' : 'No' }}</td>
-                <td>
-                    <a class="btn btn-primary" href="{{ path('admin.content_show', {'id': content.id}) }}">show</a>
-                    <a class="btn btn-primary"href="{{ path('admin.content_edit', {'id': content.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="8">no records found</td>
-            </tr>
-        {% endfor %}
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
-    
+<div class="card">
+    <div class="card-header card-header-primary">
+        <h4 class="card-title ">
+            {% trans from 'sidebar' %} admin.sidebar.options.pages {% endtrans %}
+        </h4>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table">
+                <thead class=" text-primary">
+                    <th>Id</th>
+                    <th>Title</th>
+                    <th>Alias</th>
+                    <th>Intro</th>
+                    <th>Body</th>
+                    <th>Language</th>
+                    <th>Enabled</th>
+                    <th>actions</th>
+                </thead>
+                <tbody>
+                    {% for content in contents %}
+                    <tr>
+                        <td>{{ content.id }}</td>
+                        <td>{{ content.title }}</td>
+                        Content <td>{{ content.alias }}</td>
+                        <td>{{ content.intro }}</td>
+                        <td>{{ content.body }}</td>
+                        <td>{{ content.language }}</td>
+                        <td>{{ content.enabled ? 'Yes' : 'No' }}</td>
+                        <td>
+                            <a class="btn btn-primary" href="{{ path('admin.content_show', {'id': content.id}) }}">show</a>
+                            <a class="btn btn-primary" href="{{ path('admin.content_edit', {'id': content.id}) }}">edit</a>
+                        </td>
+                    </tr>
+                    {% else %}
+                    <tr>
+                        <td colspan="8">no records found</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
 
-    <a class="btn btn-info" href="{{ path('admin.content_new') }}">Create new</a>
+
+<a class="btn btn-info" href="{{ path('admin.content_new') }}">Create new</a>
 {% endblock %}

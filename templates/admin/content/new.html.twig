@@ -1,9 +1,23 @@
 {% extends 'admin/base.html.twig' %}
 
 {% block content %}
-    <h1>Create new Content</h1>
+<div class="row">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header card-header-primary">
+                <h4 class="card-title">{% trans from 'content' %} admin.pages.content.createNew {% endtrans %}</h4>
+            </div>
+            <div class="card-body">
+            {{ include('admin/content/_form.html.twig') }}
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        Preview here
+    </div>
+</div>
 
-    {{ include('admin/content/_form.html.twig') }}
 
-    <a href="{{ path('admin.content_index') }}">back to list</a>
+
+<a href="{{ path('admin.content_index') }}">back to list</a>
 {% endblock %}

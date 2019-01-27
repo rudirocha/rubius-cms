@@ -1,10 +1,21 @@
 {% extends 'admin/base.html.twig' %}
 
 {% block content %}
-    <h1>Edit Content</h1>
-
-    {{ include('admin/content/_form.html.twig', {'button_label': 'Update'}) }}
-
+<div class="row">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header card-header-primary">
+                <h4 class="card-title">{% trans from 'content' %} admin.pages.content.createNew {% endtrans %}</h4>
+            </div>
+            <div class="card-body">
+            {{ include('admin/content/_form.html.twig') }}
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        Preview here
+    </div>
+</div>
     <a href="{{ path('admin.content_index') }}">back to list</a>
 
     {{ include('admin/content/_delete_form.html.twig') }}

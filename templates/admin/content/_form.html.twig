@@ -1,4 +1,57 @@
 {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+<div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+            <label class="bmd-label-floating">
+                {% trans from 'content' %} admin.pages.content.form.title {% endtrans %}
+            </label>
+            {{ form_widget(form.title, {attr:{class:'form-control'}}) }}
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <label class="bmd-label-floating">
+                {% trans from 'content' %} admin.pages.content.form.alias {% endtrans %}
+            </label>
+            {{ form_widget(form.alias, {attr:{class:'form-control'}}) }}
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="form-group">
+            <label class="bmd-label-floating">
+                {% trans from 'content' %} admin.pages.content.form.intro {% endtrans %}
+            </label>
+            {{ form_widget(form.intro, {attr:{rows:'6', class:'form-control'}}) }}
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="form-group">
+            <label class="bmd-label-floating">{% trans from 'content' %} admin.pages.content.form.body {% endtrans %}</label>
+            {{ form_widget(form.body, {attr:{rows:'12', class:'form-control'}}) }}
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+            <label class="bmd-label-floating">
+                {% trans from 'content' %} admin.pages.content.form.language {% endtrans %}
+            </label>
+            {{ form_widget(form.language, {attr:{class:'form-control'}}) }}
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <label class="bmd-label-floating">
+                {% trans from 'content' %} admin.pages.content.form.enabled {% endtrans %}
+            </label>
+            {{ form_widget(form.enabled, {attr:{class:'form-control'}}) }}
+        </div>
+    </div>
+</div>
+<button class="btn">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}
